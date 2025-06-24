@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #222; /* Dark background */
+  margin: 0;
+}
+
+.clock-container {
+  background-color: #111;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.digital-clock {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between digits/separators */
+}
+
+/* --- 7-Segment Digit Structure --- */
+.digit {
+  width: 60px; /* Width of one digit display */
+  height: 100px; /* Height of one digit display */
+  position: relative;
+  margin: 0 5px; /* Space around each digit */
+}
+
+.segment {
+  background-color: #333; /* Off segment color */
+  position: absolute;
+  border-radius: 2px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.segment.on {
+  background-color: #00ff00; /* Bright green for ON segments */
+  box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+}
+
+/* Segment Positions and Sizes (adjust as needed) */
+/* Thickness of segments */
+.h-segment {
+  height: 10px;
+  width: 40px;
+  left: 10px;
+}
+.v-segment {
+  width: 10px;
+  height: 40px;
+  top: 10px;
+}
+
+/* Top segment (A) */
+.segment.a {
+  top: 0;
+}
+/* Top-left segment (F) */
+.segment.f {
+  left: 0;
+}
+/* Top-right segment (B) */
+.segment.b {
+  right: 0;
+}
+/* Middle segment (G) */
+.segment.g {
+  top: 45px;
+} /* (100/2) - (10/2) */
+/* Bottom-left segment (E) */
+.segment.e {
+  left: 0;
+  top: 50px;
+}
+/* Bottom-right segment (C) */
+.segment.c {
+  right: 0;
+  top: 50px;
+}
+/* Bottom segment (D) */
+.segment.d {
+  bottom: 0;
+}
+
+/* --- Separator (Colon) --- */
+.separator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70px; /* Align with middle of digits */
+  align-items: center;
+  width: 10px;
+}
+
+.separator .dot {
+  width: 10px;
+  height: 10px;
+  background-color: #00ff00; /* Match ON segment color */
+  border-radius: 50%;
+  box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
