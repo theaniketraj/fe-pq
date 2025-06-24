@@ -1,0 +1,308 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --dropbox-blue: #0061fe;
+  --dropbox-blue-dark: #004ecb;
+  --text-dark: #1e1919;
+  --text-light: #626262;
+  --background-light: #f7f5f2; /* Common Dropbox background */
+  --white: #ffffff;
+  --border-color: #e0e0e0;
+}
+
+body {
+  margin: 0;
+  font-family: "Atlas Grotesk Web", "Open Sans", "Helvetica Neue", Helvetica,
+    Arial, sans-serif; /* Common Dropbox font stack */
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: var(--white); /* Default page background */
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px; /* Common container width */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* --- Header / Navigation --- */
+.site-header {
+  background-color: var(--white);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1.3em;
+}
+.logo svg {
+  margin-right: 8px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 25px;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.95em;
+  padding: 5px 0;
+  position: relative;
+}
+.main-nav a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--dropbox-blue);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.nav-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.95em;
+}
+.nav-button-login {
+  padding: 8px 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.95em;
+  transition: background-color 0.2s, color 0.2s;
+}
+.nav-button-login:hover {
+  background-color: var(--background-light);
+}
+
+.mobile-nav-toggle {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.mobile-nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  margin: 5px 0;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  background-color: var(--background-light);
+  padding: 80px 0;
+  text-align: center; /* Center text on mobile */
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  max-width: 600px; /* Limit text width */
+}
+
+.hero-headline {
+  font-size: 2.8em; /* Large headline */
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-subheadline {
+  font-size: 1.15em;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  max-width: 550px; /* Slightly narrower for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column; /* Stack buttons on mobile */
+  align-items: center;
+  gap: 15px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.cta-button.primary {
+  background-color: var(--dropbox-blue);
+  color: var(--white);
+}
+.cta-button.primary:hover {
+  background-color: var(--dropbox-blue-dark);
+  transform: translateY(-2px);
+}
+
+.cta-link.secondary {
+  color: var(--dropbox-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+.cta-link.secondary:hover {
+  text-decoration: underline;
+}
+
+.hero-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Desktop Styles (using min-width for mobile-first approach) --- */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 100px 0;
+    text-align: left; /* Align text left on desktop */
+  }
+
+  .hero-container {
+    flex-direction: row; /* Side-by-side layout */
+    justify-content: space-between;
+  }
+
+  .hero-content {
+    flex: 1; /* Allow content to take available space */
+    max-width: 50%; /* Adjust as needed */
+    margin-right: 40px; /* Space between text and image */
+    margin-left: 0; /* Reset mobile auto margin */
+    margin-right: 0; /* Reset mobile auto margin */
+  }
+  .hero-subheadline {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero-headline {
+    font-size: 3.5em; /* Even larger on desktop */
+  }
+
+  .hero-cta {
+    flex-direction: row; /* Buttons side-by-side */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-image-container {
+    flex: 1; /* Allow image to take available space */
+    max-width: 50%; /* Adjust as needed */
+    display: flex;
+    justify-content: center; /* Center image if it's smaller than container */
+  }
+}
+
+@media (max-width: 992px) {
+  /* Tablet and below for nav */
+  .main-nav,
+  .nav-actions .nav-link,
+  .nav-actions .nav-button-login {
+    display: none; /* Hide desktop nav items */
+  }
+  .mobile-nav-toggle {
+    display: block; /* Show hamburger */
+  }
+  .nav-container.active .main-nav {
+    /* JS will add 'active' to nav-container */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 68px; /* Below header */
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+  .nav-container.active .main-nav a {
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .nav-container.active .main-nav a:hover::after {
+    display: none; /* No underline for mobile nav items */
+  }
+  .nav-container.active .nav-actions {
+    /* Show actions in mobile menu */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px 10px 20px;
+    background-color: var(--white);
+    position: absolute;
+    top: calc(
+      68px + (4 * 46px)
+    ); /* Approximate position below main nav items */
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .nav-container.active .nav-actions .nav-link,
+  .nav-container.active .nav-actions .nav-button-login {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+  .nav-container.active .nav-actions .nav-button-login {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Hamburger animation */
+  .mobile-nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .mobile-nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
