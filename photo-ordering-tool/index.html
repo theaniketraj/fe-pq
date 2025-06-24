@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Ordering Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Order Your Prints</h1>
+        </header>
+
+        <main class="main-content">
+            <section class="photo-gallery">
+                <h2>Available Photos</h2>
+                <div id="photoGrid" class="photo-grid">
+                    <!-- Photos will be populated here -->
+                </div>
+            </section>
+
+            <aside class="order-summary">
+                <h2>Your Order</h2>
+                <div id="selectedPhotosList">
+                    <p class="empty-order-message">Select photos to start your order.</p>
+                    <!-- Selected photos and their options will appear here -->
+                </div>
+                <div class="order-total">
+                    <h3>Total: <span id="totalPrice">$0.00</span></h3>
+                </div>
+                <button id="placeOrderBtn" disabled>Place Order</button>
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
