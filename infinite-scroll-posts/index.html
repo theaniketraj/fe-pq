@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Latest Posts</h1>
+        </header>
+
+        <main id="postsContainer" class="posts-container">
+            <!-- Posts will be loaded here -->
+        </main>
+
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading more posts...</p>
+        </div>
+
+        <div id="endOfPostsMessage" class="end-of-posts" style="display: none;">
+            <p>You've reached the end of the posts! 🎉</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
