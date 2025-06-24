@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tooltip Demo</h1>
+
+        <p>
+            Hover or focus on the elements below to see tooltips.
+        </p>
+
+        <button class="tooltip-trigger" data-tooltip="This is a tooltip on top!" data-tooltip-position="top"
+            aria-describedby="tooltip-1">
+            Top Tooltip
+        </button>
+
+        <span class="tooltip-trigger" tabindex="0" <!-- Make span focusable -->
+            data-tooltip="A tooltip appearing on the bottom."
+            data-tooltip-position="bottom"
+            aria-describedby="tooltip-2"
+            style="margin-left: 20px; border-bottom: 1px dashed blue; cursor: help;">
+            Bottom Tooltip (Focusable Span)
+        </span>
+
+        <button class="tooltip-trigger" data-tooltip="Tooltip on the left side." data-tooltip-position="left"
+            aria-describedby="tooltip-3" style="margin-left: 20px;">
+            Left Tooltip
+        </button>
+
+        <button class="tooltip-trigger" data-tooltip="And this one is on the right!" data-tooltip-position="right"
+            aria-describedby="tooltip-4" style="margin-left: 20px;">
+            Right Tooltip
+        </button>
+
+        <p style="margin-top: 100px;">
+            <a href="#" class="tooltip-trigger" data-tooltip="This link has a tooltip too." data-tooltip-position="top"
+                aria-describedby="tooltip-5">
+                Link with Tooltip
+            </a>
+        </p>
+
+        <!-- Tooltip elements will be dynamically created by JS and appended to body -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
