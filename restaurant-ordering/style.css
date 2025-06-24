@@ -1,0 +1,240 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  width: 100%;
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+main {
+  flex: 3; /* Takes 3/4 of the space */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+aside#cart {
+  flex: 1; /* Takes 1/4 of the space */
+  padding: 20px;
+  background-color: #ecf0f1;
+  border-left: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  color: #2c3e50;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Grid for Restaurants & Menu Items */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+
+.card p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Cart Styling */
+#cartItemsList {
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px; /* Or adjust as needed */
+  overflow-y: auto;
+}
+
+#cartItemsList li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ccc;
+  font-size: 0.9em;
+}
+#cartItemsList li:last-child {
+  border-bottom: none;
+}
+.empty-cart-message {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+.cart-item-details {
+  font-size: 0.8em;
+  color: #666;
+  margin-left: 10px;
+}
+
+#cartTotals p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#placeOrderBtn,
+#backToRestaurantsBtn,
+#addToCartBtn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+#addToCartBtn {
+  margin-top: 10px;
+}
+#backToRestaurantsBtn {
+  margin-bottom: 20px;
+  width: auto;
+  padding: 8px 15px;
+}
+
+#placeOrderBtn:hover,
+#backToRestaurantsBtn:hover,
+#addToCartBtn:hover {
+  background-color: #2980b9;
+}
+#placeOrderBtn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close-modal-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.close-modal-btn:hover,
+.close-modal-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalCustomizationGroups .customization-group {
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 4px;
+}
+#modalCustomizationGroups .customization-group h4 {
+  margin-top: 0;
+  font-size: 1em;
+  color: #444;
+}
+#modalCustomizationGroups label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+#modalCustomizationGroups input[type="radio"],
+#modalCustomizationGroups input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.modal-actions label,
+.modal-actions input,
+.modal-actions textarea {
+  display: block;
+  width: calc(100% - 12px);
+  margin-bottom: 8px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.modal-actions input[type="number"] {
+  width: 80px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.modal-actions label[for="modalQuantity"] {
+  display: inline-block;
+  width: auto;
+}

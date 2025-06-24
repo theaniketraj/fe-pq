@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ordering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Foodie Express</h1>
+        </header>
+
+        <main>
+            <!-- Restaurant Listing View -->
+            <section id="restaurantView">
+                <h2>Choose a Restaurant</h2>
+                <div id="restaurantList" class="grid-container">
+                    <!-- Restaurants will be populated here -->
+                </div>
+            </section>
+
+            <!-- Menu View (Initially Hidden) -->
+            <section id="menuView" class="hidden">
+                <button id="backToRestaurantsBtn">« Back to Restaurants</button>
+                <h2 id="menuRestaurantName"></h2>
+                <div id="menuItemsContainer" class="grid-container">
+                    <!-- Menu items will be populated here -->
+                </div>
+            </section>
+        </main>
+
+        <aside id="cart">
+            <h2>Your Order</h2>
+            <ul id="cartItemsList">
+                <!-- Cart items will be populated here -->
+                <li class="empty-cart-message">Your cart is empty.</li>
+            </ul>
+            <div id="cartTotals">
+                <p>Subtotal: <span id="cartSubtotal">$0.00</span></p>
+                <p>Delivery Fee: <span id="cartDeliveryFee">$0.00</span></p>
+                <p><strong>Total: <span id="cartTotal">$0.00</span></strong></p>
+            </div>
+            <button id="placeOrderBtn" disabled>Place Order</button>
+        </aside>
+    </div>
+
+    <!-- Item Customization Modal (Initially Hidden) -->
+    <div id="customizationModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal-btn">×</span>
+            <h3 id="modalItemName">Customize Item</h3>
+            <div id="modalCustomizationGroups">
+                <!-- Customization options will be populated here -->
+            </div>
+            <div class="modal-actions">
+                <label for="modalQuantity">Quantity:</label>
+                <input type="number" id="modalQuantity" value="1" min="1">
+                <label for="modalNotes">Notes (optional):</label>
+                <textarea id="modalNotes" rows="2" placeholder="e.g., extra spicy"></textarea>
+                <button id="addToCartBtn">Add to Order (<span id="modalTotalPrice">$0.00</span>)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
