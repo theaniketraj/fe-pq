@@ -1,0 +1,277 @@
+/* Basic Reset & Body */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #f3f2ef; /* LinkedIn-ish background */
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar Container */
+.li-navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0 20px;
+  height: 52px; /* LinkedIn's typical height */
+  display: flex;
+  align-items: center;
+  position: fixed; /* Stick to top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.li-navbar-container {
+  width: 100%;
+  max-width: 1128px; /* LinkedIn's typical max-width */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left Section: Logo and Search */
+.li-navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.li-logo svg {
+  color: #0a66c2; /* LinkedIn Blue */
+}
+
+.li-search-container {
+  display: flex;
+  align-items: center;
+  background-color: #eef3f8; /* Light blue-grey search bg */
+  border-radius: 4px;
+  padding: 0 8px;
+  margin-left: 8px;
+  height: 34px;
+}
+
+.li-search-icon {
+  color: rgba(0, 0, 0, 0.6);
+  margin-right: 8px;
+}
+
+.li-search-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 200px; /* Adjust as needed */
+}
+.li-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Right Section: Nav Links and Profile */
+.li-navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.li-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center; /* Align items vertically in the flex container */
+  height: 100%;
+}
+
+.li-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  padding: 0 12px; /* Spacing between items */
+  height: 100%; /* Make li take full height of navbar */
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid transparent; /* For active state */
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+}
+
+.li-nav-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.li-nav-item svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px; /* Space between icon and text */
+}
+
+.li-nav-item span {
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.li-nav-item:hover,
+.li-nav-item.active {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.li-nav-item.active {
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Profile Item Specifics */
+.li-nav-item-profile {
+  position: relative; /* For dropdown positioning */
+  padding-right: 0; /* Remove right padding for profile */
+}
+.li-profile-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2px;
+}
+.li-dropdown-arrow {
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/* Basic Profile Dropdown (Hidden by default) */
+.li-profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the "Me" item */
+  right: 0;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 1001;
+}
+.li-nav-item-profile:hover .li-profile-dropdown {
+  display: block; /* Show on hover */
+}
+.li-profile-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.li-profile-dropdown a:hover {
+  background-color: #f3f2ef;
+}
+.li-profile-dropdown hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 4px 0;
+}
+
+/* Hamburger Menu (Hidden on desktop) */
+.li-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.li-hamburger svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  /* Adjust breakpoint as needed */
+  .li-search-input {
+    width: 150px;
+  }
+  .li-nav-item {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Tablet and Mobile */
+  .li-search-container {
+    width: 100%; /* Full width on smaller screens */
+    /* Optionally hide search or make it smaller on very small screens */
+    /* For this demo, we'll keep it but it might get squished */
+  }
+  .li-nav-links {
+    display: none; /* Hide regular nav links */
+    flex-direction: column;
+    position: absolute;
+    top: 52px; /* Below navbar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .li-nav-links.active {
+    display: flex; /* Show when active */
+  }
+  .li-nav-item {
+    width: 100%;
+    padding: 12px 20px; /* Adjust padding for vertical items */
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    justify-content: flex-start; /* Align items to the left */
+  }
+  .li-nav-item a {
+    flex-direction: row; /* Icon and text side-by-side */
+    align-items: center;
+    width: 100%;
+  }
+  .li-nav-item svg {
+    margin-bottom: 0;
+    margin-right: 10px; /* Space between icon and text */
+  }
+  .li-nav-item span {
+    font-size: 14px;
+  }
+  .li-nav-item.active {
+    border-bottom-color: transparent; /* Remove bottom border for active */
+    background-color: #eef3f8;
+  }
+  .li-nav-item-profile .li-profile-dropdown {
+    /* Adjust dropdown for mobile if needed, or rely on default behavior */
+    position: static; /* Or adjust to be full width */
+    border: none;
+    box-shadow: none;
+    display: none; /* Initially hide, JS could toggle this too */
+  }
+  .li-nav-item-profile:hover .li-profile-dropdown {
+    display: none; /* Disable hover for mobile, use click if implemented */
+  }
+  .li-nav-item-profile.open .li-profile-dropdown {
+    /* If JS toggles */
+    display: block;
+  }
+
+  .li-hamburger {
+    display: block; /* Show hamburger */
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .li-search-container {
+    display: none; /* Hide search on very small screens */
+  }
+  .li-navbar {
+    padding: 0 10px;
+  }
+}
