@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paginated Address Widget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="widget-container">
+        <h2>Shipping Addresses</h2>
+        <div id="addressList" class="address-list">
+            <!-- Addresses will be rendered here -->
+        </div>
+        <div class="pagination-controls">
+            <button id="prevButton" disabled>« Previous</button>
+            <span id="pageInfo">Page 1 of N</span>
+            <button id="nextButton">Next »</button>
+        </div>
+        <div id="noAddresses" style="display:none; text-align:center; padding: 20px; color: #777;">
+            No addresses to display.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
