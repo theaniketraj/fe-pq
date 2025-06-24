@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Checkboxes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Permissions</h1>
+        <ul class="checkbox-tree">
+            <li>
+                <label>
+                    <input type="checkbox" id="perm-all" class="parent-checkbox">
+                    Select All
+                </label>
+                <ul>
+                    <li>
+                        <label>
+                            <input type="checkbox" id="perm-user" class="parent-checkbox" data-parent-id="perm-all">
+                            User Management
+                        </label>
+                        <ul>
+                            <li><label><input type="checkbox" data-parent-id="perm-user"> View Users</label></li>
+                            <li><label><input type="checkbox" data-parent-id="perm-user"> Create Users</label></li>
+                            <li><label><input type="checkbox" data-parent-id="perm-user"> Edit Users</label></li>
+                            <li><label><input type="checkbox" data-parent-id="perm-user"> Delete Users</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" id="perm-settings" class="parent-checkbox" data-parent-id="perm-all">
+                            Settings
+                        </label>
+                        <ul>
+                            <li><label><input type="checkbox" data-parent-id="perm-settings"> General Settings</label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="checkbox" id="perm-billing" class="parent-checkbox"
+                                        data-parent-id="perm-settings">
+                                    Billing
+                                </label>
+                                <ul>
+                                    <li><label><input type="checkbox" data-parent-id="perm-billing"> View
+                                            Invoices</label></li>
+                                    <li><label><input type="checkbox" data-parent-id="perm-billing"> Manage
+                                            Subscription</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox" id="perm-reports" data-parent-id="perm-all">
+                            View Reports (No children)
+                        </label>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

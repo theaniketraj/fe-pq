@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f7f6;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.checkbox-tree {
+  list-style-type: none;
+  padding-left: 0; /* Remove default ul padding */
+}
+
+.checkbox-tree ul {
+  list-style-type: none;
+  padding-left: 25px; /* Indent children */
+  margin-top: 5px;
+}
+
+.checkbox-tree li {
+  margin-bottom: 8px;
+}
+
+.checkbox-tree label {
+  cursor: pointer;
+  display: inline-flex; /* Align checkbox and text nicely */
+  align-items: center;
+  font-size: 0.95em;
+}
+
+.checkbox-tree input[type="checkbox"] {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Styling for the indeterminate state */
+/* We can't directly style the ::before or ::after of an input[type="checkbox"]
+   in all browsers reliably for the indeterminate mark.
+   So, we'll use the 'indeterminate' property set by JavaScript.
+   Modern browsers will show a dash or similar mark.
+   For older browsers or more custom look, you might hide the default checkbox
+   and create a custom one with a span. For this example, we rely on JS.
+*/
+
+/* Optional: A more visual cue if browser doesn't style indeterminate well enough */
+
+input[type="checkbox"].indeterminate + span::before {
+    content: '-';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    line-height: 1em;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+.checkbox-tree input[type="checkbox"]:indeterminate + span::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: #007bff;
+    border-radius: 3px;
+}
