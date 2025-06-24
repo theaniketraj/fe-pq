@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Flexbox Layout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="/">SiteLogo</a>
+            </div>
+            <nav class="main-navigation" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="mainNavList">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-area-wrapper">
+        <div class="container content-container">
+            <main id="main-content" class="primary-content" role="main" tabindex="-1">
+                <h1>Main Content Title</h1>
+                <p>This is the primary content area. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                    anim id est laborum.</p>
+                <article>
+                    <h2>Article Title 1</h2>
+                    <p>Content for the first article...</p>
+                </article>
+                <article>
+                    <h2>Article Title 2</h2>
+                    <p>Content for the second article...</p>
+                </article>
+            </main>
+
+            <aside class="sidebar" role="complementary">
+                <h2>Sidebar</h2>
+                <nav aria-label="Secondary Navigation">
+                    <ul>
+                        <li><a href="#">Related Link 1</a></li>
+                        <li><a href="#">Another Link</a></li>
+                        <li><a href="#">Resource Page</a></li>
+                        <li><a href="#">Help & Support</a></li>
+                    </ul>
+                </nav>
+                <div class="widget">
+                    <h3>Widget Title</h3>
+                    <p>Some widget content here. Could be ads, recent posts, etc.</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <p>© <span id="currentYear"></span> Your Company. All rights reserved.</p>
+            <nav aria-label="Footer Navigation">
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
