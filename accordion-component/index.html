@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-1" id="header-1">
+                    What is an accordion component?
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" role="region" aria-labelledby="header-1" id="content-1">
+                    <p>An accordion is a vertically stacked list of items, where each item can be "expanded" or
+                        "collapsed" to reveal the content associated with that item. Typically, only one item is
+                        expanded at a time.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-2" id="header-2">
+                    How do you create one with HTML/CSS/JS?
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" role="region" aria-labelledby="header-2" id="content-2">
+                    <p>You use HTML for the structure (e.g., divs for items, headers, content), CSS for styling and the
+                        hide/show mechanism (often with `max-height` and `overflow: hidden`), and JavaScript to handle
+                        the click events and toggle the active states.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" aria-expanded="false" aria-controls="content-3" id="header-3">
+                    Why is accessibility important?
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" role="region" aria-labelledby="header-3" id="content-3">
+                    <p>Accessibility ensures that people with disabilities can perceive, understand, navigate, and
+                        interact with web content. For accordions, this includes keyboard navigation and proper ARIA
+                        attributes for screen readers.</p>
+                    <ul>
+                        <li>Use buttons for headers.</li>
+                        <li>Manage `aria-expanded`.</li>
+                        <li>Link header to content with `aria-controls` and `id`.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
