@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top for game info */
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding-top: 20px;
+}
+
+.game-container {
+  text-align: center;
+}
+
+#infoArea {
+  margin-bottom: 15px;
+  min-height: 40px; /* To prevent layout shift */
+}
+
+#infoArea p {
+  margin: 5px 0;
+}
+
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 60px); /* 8 columns, each 60px wide */
+  grid-template-rows: repeat(8, 60px); /* 8 rows, each 60px high */
+  width: 480px; /* 8 * 60px */
+  height: 480px; /* 8 * 60px */
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px; /* Size of chess pieces */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+}
+
+.square.light {
+  background-color: #f0d9b5; /* Light wood color */
+}
+
+.square.dark {
+  background-color: #b58863; /* Dark wood color */
+}
+
+.square.selected {
+  background-color: #6a994e !important; /* Greenish highlight */
+  outline: 2px solid yellow;
+}
+
+.square.possible-move {
+  /* Optional: for highlighting valid moves */
+  background-color: rgba(106, 153, 78, 0.5) !important;
+  border-radius: 50%;
+}
+
+/* Piece colors */
+.piece-white {
+  color: #ffffff;
+  text-shadow: 0 0 2px black, 0 0 2px black; /* Outline for white pieces */
+}
+
+.piece-black {
+  color: #000000;
+}
