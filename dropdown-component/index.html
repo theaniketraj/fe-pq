@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dropdown Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Custom Dropdown</h1>
+
+        <p>Select your favorite fruit:</p>
+        <div class="custom-dropdown" id="fruitDropdown" tabindex="0">
+            <div class="dropdown-selected-value" id="fruitSelectedValue" aria-live="polite" aria-atomic="true">
+                Select a fruit...
+            </div>
+            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
+            </svg>
+            <ul class="dropdown-options" id="fruitOptionsList" role="listbox" aria-hidden="true">
+                <li role="option" data-value="apple" tabindex="-1">Apple</li>
+                <li role="option" data-value="banana" tabindex="-1">Banana</li>
+                <li role="option" data-value="orange" tabindex="-1">Orange</li>
+                <li role="option" data-value="grape" tabindex="-1">Grape</li>
+                <li role="option" data-value="strawberry" tabindex="-1">Strawberry</li>
+                <li role="option" data-value="mango" tabindex="-1" class="disabled" aria-disabled="true">Mango (Out of
+                    stock)</li>
+            </ul>
+        </div>
+        <p>Selected Value: <strong id="selectedValueDisplay">None</strong></p>
+
+        <hr style="margin: 30px 0;">
+
+        <p>Select a country (dynamically populated):</p>
+        <div class="custom-dropdown" id="countryDropdown" tabindex="0">
+            <div class="dropdown-selected-value" id="countrySelectedValue" aria-live="polite" aria-atomic="true">
+                Select a country...
+            </div>
+            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd" />
+            </svg>
+            <ul class="dropdown-options" id="countryOptionsList" role="listbox" aria-hidden="true">
+                <!-- Options will be populated by JS -->
+            </ul>
+        </div>
+        <p>Selected Country: <strong id="selectedCountryDisplay">None</strong></p>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
