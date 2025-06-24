@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Slider Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Custom Range Slider</h1>
+
+        <div class="slider-widget-container">
+            <label for="volumeSlider">Volume:</label>
+            <div class="custom-slider" id="volumeSlider" data-min="0" data-max="100" data-step="1" data-value="50"
+                role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                <div class="slider-track">
+                    <div class="slider-track-filled"></div>
+                </div>
+                <div class="slider-thumb"></div>
+            </div>
+            <output class="slider-value-display" for="volumeSlider" id="volumeValue">50</output>
+        </div>
+
+        <div class="slider-widget-container">
+            <label for="priceRangeSlider">Price Range:</label>
+            <div class="custom-slider" id="priceRangeSlider" data-min="10" data-max="500" data-step="10"
+                data-value="150" role="slider" aria-valuemin="10" aria-valuemax="500" aria-valuenow="150" tabindex="0">
+                <div class="slider-track">
+                    <div class="slider-track-filled"></div>
+                </div>
+                <div class="slider-thumb"></div>
+            </div>
+            <output class="slider-value-display" for="priceRangeSlider" id="priceValue">150</output>
+        </div>
+
+        <div class="slider-widget-container">
+            <label for="ratingSlider">Rating (0.5 steps):</label>
+            <div class="custom-slider" id="ratingSlider" data-min="0" data-max="5" data-step="0.5" data-value="2.5"
+                role="slider" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2.5" tabindex="0">
+                <div class="slider-track">
+                    <div class="slider-track-filled"></div>
+                </div>
+                <div class="slider-thumb"></div>
+            </div>
+            <output class="slider-value-display" for="ratingSlider" id="ratingValue">2.5</output>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
