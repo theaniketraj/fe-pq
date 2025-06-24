@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Email Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button id="composeBtn">Compose</button>
+            </div>
+            <ul id="folderList" class="folder-list">
+                <!-- Folders will be populated by JavaScript -->
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <section class="email-list-pane" id="emailListPane">
+                <div class="list-header">
+                    <h2 id="currentFolderName">Inbox</h2>
+                    <input type="text" id="searchEmails" placeholder="Search emails...">
+                </div>
+                <ul id="emailList" class="email-items-list">
+                    <!-- Email items will be populated here -->
+                </ul>
+            </section>
+
+            <section class="email-reading-pane" id="emailReadingPane">
+                <div class="no-email-selected" id="noEmailSelectedView">
+                    <p>Select an email to read.</p>
+                </div>
+                <div class="email-content-view hidden" id="emailContentView">
+                    <div class="email-header">
+                        <h3 id="emailSubject"></h3>
+                        <div class="email-meta">
+                            <p><strong>From:</strong> <span id="emailFrom"></span></p>
+                            <p><strong>To:</strong> <span id="emailTo"></span></p>
+                            <p><strong>Date:</strong> <span id="emailDate"></span></p>
+                        </div>
+                    </div>
+                    <div class="email-body" id="emailBody">
+                        <!-- Email body content -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
