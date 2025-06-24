@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f7f6;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#searchInput {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 300px;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+thead {
+  background-color: #007bff;
+  color: white;
+}
+
+th {
+  cursor: pointer;
+  position: relative; /* For sort icons */
+}
+
+th:hover {
+  background-color: #0056b3;
+}
+
+/* Sort icons (using text characters for simplicity) */
+th .sort-icon {
+  font-size: 0.8em;
+  margin-left: 5px;
+  color: #fff; /* Ensure visibility on dark header */
+  opacity: 0.7;
+}
+
+th.sorted-asc .sort-icon::after {
+  content: " ▲"; /* Up arrow */
+  opacity: 1;
+}
+
+th.sorted-desc .sort-icon::after {
+  content: " ▼"; /* Down arrow */
+  opacity: 1;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+#noResults {
+  color: #777;
+  font-style: italic;
+}
