@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Channels</h3>
+            </div>
+            <ul id="channelList" class="channel-list">
+                <!-- Channels will be populated by JavaScript -->
+            </ul>
+        </aside>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <h2 id="currentChatName">Select a Channel</h2>
+                <!-- Add more header icons/info here if needed -->
+            </header>
+
+            <div class="message-list" id="messageList">
+                <!-- Messages will be populated here -->
+                <div class="no-channel-selected">
+                    <p>Please select a channel from the sidebar to start chatting.</p>
+                </div>
+            </div>
+
+            <footer class="message-input-area">
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button id="sendMessageBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24"
+                        height="24">
+                        <path
+                            d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                    <span>Send</span>
+                </button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
