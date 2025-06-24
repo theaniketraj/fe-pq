@@ -1,0 +1,94 @@
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.status {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  min-height: 1.5em; /* Prevent layout shift */
+}
+
+#currentPlayer {
+  font-weight: bold;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 columns, each 100px wide */
+  grid-template-rows: repeat(3, 100px); /* 3 rows, each 100px high */
+  gap: 5px; /* Space between cells */
+  margin-bottom: 20px;
+  border: 2px solid #34495e;
+  width: 310px; /* 3*100 + 2*5 */
+  height: 310px; /* 3*100 + 2*5 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em; /* Size of X and O */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  user-select: none; /* Prevent text selection */
+}
+
+.cell:hover:not(.occupied) {
+  /* Only hover on empty cells */
+  background-color: #dbe4e8;
+}
+
+.cell.x {
+  color: #e74c3c; /* Red for X */
+}
+
+.cell.o {
+  color: #3498db; /* Blue for O */
+}
+
+.cell.winning-cell {
+  background-color: #2ecc71 !important; /* Green for winning cells */
+  color: white !important;
+}
+
+.restart-button {
+  padding: 12px 25px;
+  font-size: 1em;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.restart-button:hover {
+  background-color: #2980b9;
+}
