@@ -1,0 +1,53 @@
+{
+    "name": "Root",
+    "type": "folder",
+    "children": [
+        {
+            "name": "Documents",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "Report.docx",
+                    "type": "file"
+                },
+                {
+                    "name": "Presentation.pptx",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "Pictures",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "Vacation",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "Beach.jpg",
+                            "type": "file"
+                        },
+                        {
+                            "name": "Mountains.png",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "Family.jpg",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "Music",
+            "type": "folder",
+            "children": []
+        },
+        {
+            "name": "config.ini",
+            "type": "file"
+        }
+    ]
+}
