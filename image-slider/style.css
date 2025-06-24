@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  margin: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden; /* Crucial for slide transitions */
+}
+
+.slider {
+  position: relative; /* For absolute positioning of buttons and dots */
+}
+
+.slides {
+  display: flex; /* Arrange slides horizontally */
+  transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+  /* Width will be set by JS based on number of slides */
+}
+
+.slide {
+  min-width: 100%; /* Each slide takes full width of the slider */
+  box-sizing: border-box;
+  position: relative; /* For caption positioning */
+  opacity: 0; /* Initially hide all slides */
+  transition: opacity 0.5s ease-in-out;
+  display: none; /* Use display none/block for simple fade */
+}
+
+.slide.active {
+  opacity: 1;
+  display: block; /* Show active slide */
+}
+
+.slide img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+  max-height: 500px; /* Optional: constrain image height */
+  object-fit: cover; /* Cover the area, might crop */
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 15px;
+  font-size: 0.9em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Navigation Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 0 3px 3px 0; /* Rounded on one side */
+  transition: background-color 0.2s;
+}
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.next-btn {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Navigation Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 40px; /* Adjust if caption is present and tall */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dot:hover,
+.dot.active {
+  background-color: white;
+}
