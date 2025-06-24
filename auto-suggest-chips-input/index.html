@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Suggest Chips Input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Compose Email</h1>
+        <div class="form-field">
+            <label for="recipientsInput">To:</label>
+            <div class="chips-input-container" id="chipsContainer">
+                <!-- Chips will be added here -->
+                <input type="text" id="recipientsInput" class="recipient-input" placeholder="Add recipients...">
+            </div>
+            <ul class="suggestions-list" id="suggestionsList" style="display: none;">
+                <!-- Suggestions will be populated here -->
+            </ul>
+        </div>
+        <div class="form-field">
+            <label for="subjectInput">Subject:</label>
+            <input type="text" id="subjectInput" placeholder="Email subject">
+        </div>
+        <div class="form-field">
+            <label for="bodyTextarea">Body:</label>
+            <textarea id="bodyTextarea" rows="8" placeholder="Write your email..."></textarea>
+        </div>
+        <button id="sendEmailBtn">Send Email</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

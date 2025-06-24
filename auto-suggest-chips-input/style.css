@@ -1,0 +1,198 @@
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif; /* Material Design font stack */
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px;
+}
+
+h1 {
+  text-align: center;
+  color: #212121;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #757575;
+  font-weight: 500;
+}
+
+/* --- Chips Input Container --- */
+.chips-input-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow chips to wrap */
+  align-items: center;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  padding: 5px 8px;
+  min-height: 38px; /* Roughly match input height */
+  cursor: text; /* Indicate it's an input area */
+  transition: border-color 0.2s ease;
+}
+.chips-input-container:focus-within {
+  border-color: #1976d2; /* Material Blue */
+  box-shadow: 0 0 0 1px #1976d2;
+}
+
+/* --- Chip Styling --- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e0e0; /* Light grey for chip */
+  color: #333;
+  border-radius: 16px; /* Pill shape */
+  padding: 4px 6px 4px 10px; /* More padding on left for text */
+  margin: 3px;
+  font-size: 0.85em;
+  line-height: 1.4;
+  cursor: default;
+}
+
+.chip-name {
+  margin-right: 6px;
+}
+
+.chip-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #bdbdbd; /* Placeholder avatar color */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin-right: 6px; /* Space between avatar and remove button */
+}
+
+.chip-remove-btn {
+  background: none;
+  border: none;
+  color: #757575;
+  cursor: pointer;
+  font-size: 1.1em; /* Make X slightly larger */
+  padding: 0 4px;
+  line-height: 1;
+  margin-left: auto; /* Push to the right if avatar is on left */
+}
+.chip-remove-btn:hover {
+  color: #333;
+}
+
+/* --- Recipient Input Field (within chips container) --- */
+.recipient-input {
+  flex-grow: 1; /* Take remaining space */
+  border: none;
+  outline: none;
+  padding: 6px 4px;
+  font-size: 0.95em;
+  min-width: 100px; /* Ensure it has some width even when empty */
+  background-color: transparent;
+}
+
+/* --- Suggestions List --- */
+.suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 4px 0 0 0; /* Position below the input container */
+  border: 1px solid #bdbdbd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+  max-height: 180px;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Above other content */
+  position: relative; /* To position correctly under the input field */
+}
+
+.suggestions-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+}
+.suggestions-list li:hover,
+.suggestions-list li.active-suggestion {
+  background-color: #eeeeee; /* Lighter hover */
+}
+.suggestion-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #bdbdbd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.suggestion-name {
+  font-weight: 500;
+}
+.suggestion-email {
+  font-size: 0.85em;
+  color: #757575;
+  margin-left: 5px;
+}
+
+/* Other form elements */
+#subjectInput,
+#bodyTextarea {
+  width: calc(100% - 22px); /* Account for padding and border */
+  padding: 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-family: inherit;
+}
+#subjectInput:focus,
+#bodyTextarea:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 1px #1976d2;
+  outline: none;
+}
+
+#sendEmailBtn {
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s;
+  float: right; /* Align to right */
+}
+#sendEmailBtn:hover {
+  background-color: #115293;
+}
