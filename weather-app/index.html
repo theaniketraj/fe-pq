@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="weather-container">
+        <div class="search-area">
+            <input type="text" id="cityInput" placeholder="Enter city name...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+            Loading...
+        </div>
+
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <!-- Error messages will appear here -->
+        </div>
+
+        <div class="weather-info" id="weatherInfo" style="display: none;">
+            <div class="main-info">
+                <div class="location-datetime">
+                    <h2 id="cityName">City Name</h2>
+                    <p id="currentDateTime">Date & Time</p>
+                </div>
+                <div class="temperature">
+                    <img id="weatherIcon" src="" alt="Weather icon">
+                    <span id="tempValue">--</span><span class="temp-unit">°C</span>
+                </div>
+            </div>
+            <p class="weather-description" id="weatherDescription">Weather Description</p>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Feels like</span>
+                    <span id="feelsLike" class="detail-value">-- °C</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Humidity</span>
+                    <span id="humidity" class="detail-value">-- %</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Wind</span>
+                    <span id="windSpeed" class="detail-value">-- m/s</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Pressure</span>
+                    <span id="pressure" class="detail-value">-- hPa</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

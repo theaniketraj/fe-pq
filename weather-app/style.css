@@ -1,0 +1,180 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f0f2f5;
+  --card-background: #ffffff;
+  --text-color: #333;
+  --text-light: #666;
+  --border-color: #e0e0e0;
+  --error-color: #dc3545;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.weather-container {
+  background-color: var(--card-background);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+/* --- Search Area --- */
+.search-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+#cityInput {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+}
+#cityInput:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#searchBtn {
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+#searchBtn:hover {
+  background-color: #0056b3;
+}
+
+/* --- Loading & Error --- */
+.loading-indicator,
+.error-message {
+  margin: 20px 0;
+  font-size: 1em;
+  color: var(--text-light);
+}
+.error-message {
+  color: var(--error-color);
+  font-weight: 500;
+}
+
+/* --- Weather Info Display --- */
+.weather-info {
+  /* Styles applied when data is loaded */
+  display: none; /* Hidden by default, shown when data is available */
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.location-datetime h2 {
+  /* City Name */
+  margin: 0 0 5px 0;
+  font-size: 1.8em;
+  color: var(--text-color);
+  font-weight: 600;
+}
+#currentDateTime {
+  font-size: 0.85em;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.temperature {
+  display: flex;
+  align-items: center;
+}
+#weatherIcon {
+  width: 60px;
+  height: 60px;
+  margin-right: 5px;
+}
+#tempValue {
+  font-size: 3em;
+  font-weight: 700;
+  color: var(--text-color);
+}
+.temp-unit {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-left: 2px;
+  vertical-align: super; /* Align degree symbol nicely */
+}
+
+.weather-description {
+  font-size: 1.1em;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  text-transform: capitalize;
+  text-align: left; /* Align with city name */
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  text-align: left;
+}
+
+.detail-item {
+  background-color: var(--background-color);
+  padding: 12px;
+  border-radius: 6px;
+}
+.detail-label {
+  display: block;
+  font-size: 0.8em;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+.detail-value {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .weather-container {
+    padding: 20px;
+  }
+  .main-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .temperature {
+    align-self: flex-start; /* Align temp to left when stacked */
+  }
+  .details-grid {
+    grid-template-columns: 1fr; /* Stack details on very small screens */
+  }
+}
