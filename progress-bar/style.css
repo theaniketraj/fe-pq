@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+#addProgressBarBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s;
+}
+
+#addProgressBarBtn:hover {
+  background-color: #0056b3;
+}
+
+#progressBarsContainer {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between progress bars */
+}
+
+.progress-bar-wrapper {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  padding: 3px; /* Optional: for a slight border effect */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  width: 0%; /* Initial width */
+  height: 25px;
+  background-color: #4caf50; /* Green progress */
+  border-radius: 3px;
+  text-align: center;
+  line-height: 25px; /* Vertically center text */
+  color: white;
+  font-weight: bold;
+  transition: width 0.1s linear; /* Smooth fill, adjust timing for animation steps */
+}
+
+.progress-bar.finished {
+  background-color: #28a745; /* Slightly darker green when finished */
+}
